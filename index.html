@@ -15,8 +15,16 @@
       --text:#e5e7eb;
       --muted:#9ca3af;
       --border: rgba(34,197,94,.25);
+      --glow: rgba(34,197,94,.35);
     }
+    /* Cyber mode intensifies green */
+    body.cyber {
+      --border: rgba(34,197,94,.55);
+      --glow: rgba(34,197,94,.65);
+    }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Inter,system-ui,Arial,sans-serif;
@@ -28,13 +36,21 @@
     }
     a{color:var(--green); text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:32px 20px}
+
+    /* Animations */
+    .reveal{opacity:0; transform:translateY(14px); transition:.6s ease}
+    .reveal.visible{opacity:1; transform:none}
+
     .badge{
       display:inline-block; padding:6px 12px; border:1px solid var(--border);
-      border-radius:999px; color:var(--green); font-size:12px
+      border-radius:999px; color:var(--green); font-size:12px;
+      box-shadow:0 0 0 transparent; transition:.3s ease;
     }
+    body.cyber .badge{box-shadow:0 0 18px var(--glow)}
     h1{font-size:clamp(32px,5vw,48px); margin:10px 0}
     h2{font-size:24px; margin:0}
     .subtitle{color:var(--muted)}
+
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
     .btn{
       padding:10px 14px; border-radius:12px; border:1px solid var(--border);
@@ -46,29 +62,47 @@
       background:linear-gradient(180deg, var(--green), var(--green-d));
       color:#000; border:none;
     }
-    .btn:hover{transform:translateY(-2px)}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.4)}
+    body.cyber .btn:hover{box-shadow:0 0 24px var(--glow)}
+
     .grid{display:grid; gap:20px; margin-top:30px}
     .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px}
     .card{
       background:linear-gradient(180deg, rgba(34,197,94,.06), rgba(34,197,94,.02)), var(--card);
       border:1px solid var(--border); border-radius:20px; padding:20px;
-      transition:transform .2s ease, box-shadow .2s ease;
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
     .card:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    body.cyber .card:hover{box-shadow:0 0 28px var(--glow)}
+
     .tag{
       display:inline-block; padding:8px 12px; border-radius:999px;
       border:1px solid var(--border); color:var(--green); background:#0c0c0c;
       margin:6px 6px 0 0; font-size:13px;
     }
+
+    .toolbar{
+      position:fixed; right:16px; bottom:16px; display:flex; gap:10px; z-index:5;
+    }
+
+    .shot{
+      width:100%; height:150px; border-radius:12px; background:#0c0c0c;
+      border:1px dashed var(--border); display:flex; align-items:center; justify-content:center;
+      color:var(--muted); font-size:13px; margin-bottom:10px;
+    }
+
     footer{color:var(--muted); text-align:center; padding:32px 0}
     .muted{color:var(--muted)}
+    .timeline{display:grid; gap:16px}
+    .role{display:grid; gap:6px}
+    .role small{color:var(--muted)}
   </style>
 </head>
-<body>
+<body class="subtle">
   <div class="container">
 
     <!-- HERO -->
-    <section>
+    <section class="reveal">
       <span class="badge">SDET • QA Automation Engineer</span>
       <h1>Ritesh Pathak</h1>
       <p class="subtitle">Playwright (C#) • Selenium • Tosca • API Testing • CI/CD</p>
@@ -77,13 +111,12 @@
         <a class="btn" href="https://www.linkedin.com/in/retesh-pathak" target="_blank">LinkedIn</a>
         <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">GitHub</a>
         <a class="btn secondary" href="#contact">Contact</a>
-        <!-- Upload your resume PDF in this repo with this name -->
         <a class="btn primary" href="Ritesh-Pathak-Resume.pdf" target="_blank">Download Resume</a>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="grid">
+    <section class="grid reveal">
       <div class="card">
         <h2>About Me</h2>
         <p class="muted">
@@ -95,7 +128,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="grid">
+    <section class="grid reveal">
       <h2>Skills</h2>
       <div>
         <span class="tag">Playwright (C#)</span>
@@ -109,21 +142,69 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section class="grid reveal">
+      <h2>Experience</h2>
+      <div class="card timeline">
+        <div class="role">
+          <strong>Siemens Healthineers — Test Professional</strong>
+          <small>Dec 2025 – Present • Pune</small>
+          <p class="muted">Leading automation initiatives, strengthening CI pipelines, and improving test reliability.</p>
+        </div>
+        <div class="role">
+          <strong>Infosys — Senior Associate Consultant</strong>
+          <small>Oct 2023 – Dec 2025 • Pune</small>
+          <p class="muted">Drove QA for EUS Workspace & MyHub, built Tosca/Selenium automation, CI/CD, and dashboards.</p>
+        </div>
+        <div class="role">
+          <strong>Infosys — Associate Consultant / Test Analyst / System Engineer</strong>
+          <small>Feb 2020 – Sep 2023</small>
+          <p class="muted">Automated ~75% regression, API testing, Jenkins CI, Agile delivery, banking domain QA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & AWARDS -->
+    <section class="grid reveal">
+      <h2>Certifications & Awards</h2>
+      <div class="cards">
+        <div class="card">
+          <strong>Tricentis Tosca Automation Specialist Level 1</strong>
+          <p class="muted">Certification</p>
+        </div>
+        <div class="card">
+          <strong>Harvard ManageMentor (Persuading, Difficult Interactions)</strong>
+          <p class="muted">Certification</p>
+        </div>
+        <div class="card">
+          <strong>Bronze Medal – Innovative Project</strong>
+          <p class="muted">Award</p>
+        </div>
+        <div class="card">
+          <strong>Runner-up – National & State Level Competitions</strong>
+          <p class="muted">Awards</p>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
-    <section class="grid">
+    <section class="grid reveal">
       <h2>Projects</h2>
       <div class="cards">
         <div class="card">
+          <div class="shot">Add Screenshot Here</div>
           <h3>Playwright BDD Framework (C#)</h3>
           <p class="muted">End-to-end UI automation with BDD, reporting, screenshots, CI-ready.</p>
           <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
         </div>
         <div class="card">
+          <div class="shot">Add Screenshot Here</div>
           <h3>API + UI Automation Framework</h3>
           <p class="muted">Hybrid framework for API and UI testing with structured strategy.</p>
           <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
         </div>
         <div class="card">
+          <div class="shot">Add Screenshot Here</div>
           <h3>Automation Utilities & Experiments</h3>
           <p class="muted">PoCs and tools to improve QA productivity and reliability.</p>
           <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
@@ -132,7 +213,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="grid">
+    <section id="contact" class="grid reveal">
       <div class="card">
         <h2>Contact</h2>
         <p>📧 retesh21.rp@gmail.com</p>
@@ -145,8 +226,29 @@
     </footer>
   </div>
 
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <button class="btn secondary" id="toggle">Toggle Cyber</button>
+  </div>
+
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold:0.15});
+    els.forEach(el=>io.observe(el));
+
+    // Toggle cyber mode
+    const btn = document.getElementById('toggle');
+    btn.addEventListener('click', ()=>{
+      document.body.classList.toggle('cyber');
+    });
   </script>
 </body>
 </html>
