@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ritesh Pathak | SDET / QA Automation Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#0f0f0f;
+      --green:#22c55e;      /* goblin green */
+      --green-d:#16a34a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border: rgba(34,197,94,.25);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Arial,sans-serif;
+      background:
+        radial-gradient(1000px 500px at 10% -10%, rgba(34,197,94,.08), transparent 40%),
+        radial-gradient(800px 400px at 90% 10%, rgba(34,197,94,.06), transparent 40%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--green); text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:32px 20px}
+    .badge{
+      display:inline-block; padding:6px 12px; border:1px solid var(--border);
+      border-radius:999px; color:var(--green); font-size:12px
+    }
+    h1{font-size:clamp(32px,5vw,48px); margin:10px 0}
+    h2{font-size:24px; margin:0}
+    .subtitle{color:var(--muted)}
+    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    .btn{
+      padding:10px 14px; border-radius:12px; border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(34,197,94,.12), rgba(34,197,94,.04));
+      color:var(--green); font-weight:600; transition:.2s ease;
+    }
+    .btn.secondary{background:#0c0c0c; color:var(--text)}
+    .btn.primary{
+      background:linear-gradient(180deg, var(--green), var(--green-d));
+      color:#000; border:none;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .grid{display:grid; gap:20px; margin-top:30px}
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px}
+    .card{
+      background:linear-gradient(180deg, rgba(34,197,94,.06), rgba(34,197,94,.02)), var(--card);
+      border:1px solid var(--border); border-radius:20px; padding:20px;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    .tag{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border); color:var(--green); background:#0c0c0c;
+      margin:6px 6px 0 0; font-size:13px;
+    }
+    footer{color:var(--muted); text-align:center; padding:32px 0}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <section>
+      <span class="badge">SDET • QA Automation Engineer</span>
+      <h1>Ritesh Pathak</h1>
+      <p class="subtitle">Playwright (C#) • Selenium • Tosca • API Testing • CI/CD</p>
+
+      <div class="actions">
+        <a class="btn" href="https://www.linkedin.com/in/retesh-pathak" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">GitHub</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+        <!-- Upload your resume PDF in this repo with this name -->
+        <a class="btn primary" href="Ritesh-Pathak-Resume.pdf" target="_blank">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="grid">
+      <div class="card">
+        <h2>About Me</h2>
+        <p class="muted">
+          Results-driven Automation Test Engineer with 5+ years of experience building and executing
+          reliable automation frameworks. Strong in Playwright (C#), Selenium, Tosca, and API testing.
+          Passionate about quality, clean frameworks, and scalable test strategies in Agile environments.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="grid">
+      <h2>Skills</h2>
+      <div>
+        <span class="tag">Playwright (C#)</span>
+        <span class="tag">Selenium (Java / C#)</span>
+        <span class="tag">Tosca</span>
+        <span class="tag">API Testing (Postman / REST)</span>
+        <span class="tag">BDD (Cucumber / SpecFlow)</span>
+        <span class="tag">CI/CD (GitHub / GitLab)</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Azure DevOps / JIRA</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="grid">
+      <h2>Projects</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Playwright BDD Framework (C#)</h3>
+          <p class="muted">End-to-end UI automation with BDD, reporting, screenshots, CI-ready.</p>
+          <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+          <h3>API + UI Automation Framework</h3>
+          <p class="muted">Hybrid framework for API and UI testing with structured strategy.</p>
+          <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+          <h3>Automation Utilities & Experiments</h3>
+          <p class="muted">PoCs and tools to improve QA productivity and reliability.</p>
+          <a class="btn" href="https://github.com/PathakRitesh21" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="grid">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>📧 retesh21.rp@gmail.com</p>
+        <p>📍 Pune, India</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Ritesh Pathak • Dark × Goblin Green
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
