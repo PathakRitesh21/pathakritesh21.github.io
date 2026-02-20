@@ -22,6 +22,18 @@
       --border: rgba(34,197,94,.55);
       --glow: rgba(34,197,94,.65);
     }
+    .profile-pic{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--border);
+  box-shadow:0 0 0 transparent;
+  margin:16px 0 8px 0;
+}
+body.cyber .profile-pic{
+  box-shadow:0 0 24px var(--glow);
+}
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -104,6 +116,7 @@
     <!-- HERO -->
     <section class="reveal">
       <span class="badge">SDET • QA Automation Engineer</span>
+      <img src="https://avatars.githubusercontent.com/u/221251978?s=96&v=4" alt="Ritesh Pathak" class="profile-pic">
       <h1>Ritesh Pathak</h1>
       <p class="subtitle">Playwright (C#) • Selenium • Tosca • API Testing • CI/CD</p>
 
